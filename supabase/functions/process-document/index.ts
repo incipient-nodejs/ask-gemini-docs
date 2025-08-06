@@ -2,7 +2,7 @@ import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai";
-import { getTextExtractor } from "https://esm.sh/unpdf@0.11.0";
+import { getTextExtractor } from "https://esm.sh/unpdf@1.1.0";
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
