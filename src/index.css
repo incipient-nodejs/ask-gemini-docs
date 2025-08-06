@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* AI-focused design system with modern gradients and sophisticated colors */
+/* Modern AI-focused design system with sophisticated gradients and animations */
 
 @layer base {
   :root {
-    /* Base colors for a sophisticated AI interface */
+    /* Base colors - clean and modern */
     --background: 210 20% 98%;
     --foreground: 222 84% 5%;
 
@@ -16,17 +16,18 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 84% 5%;
 
-    /* AI-inspired primary with electric blue */
+    /* Premium AI-inspired primary colors */
     --primary: 217 91% 60%;
     --primary-foreground: 0 0% 98%;
     --primary-glow: 217 91% 70%;
+    --primary-variant: 230 85% 65%;
 
-    /* Sophisticated secondary grays */
-    --secondary: 215 20% 95%;
+    /* Sophisticated grays with perfect contrast */
+    --secondary: 215 16% 96%;
     --secondary-foreground: 222 47% 11%;
 
-    --muted: 215 16% 94%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 215 16% 93%;
+    --muted-foreground: 215 16% 45%;
 
     --accent: 264 83% 70%;
     --accent-foreground: 0 0% 98%;
@@ -34,30 +35,37 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 14% 89%;
+    --border: 215 14% 87%;
     --input: 215 14% 89%;
     --ring: 217 91% 60%;
 
-    /* AI-themed colors */
+    /* Extended AI color palette */
     --ai-purple: 264 83% 70%;
     --ai-blue: 217 91% 60%;
     --ai-cyan: 190 95% 65%;
     --ai-success: 142 76% 36%;
+    --ai-warning: 38 92% 50%;
+    --ai-emerald: 160 84% 39%;
     
-    /* Beautiful gradients */
+    /* Premium gradients for modern UI */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--ai-purple)));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(215 20% 98%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--primary-variant)), hsl(var(--ai-cyan)));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.8), hsl(215 20% 98% / 0.9));
     --gradient-chat: linear-gradient(180deg, hsl(215 20% 98%), hsl(215 25% 95%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.05), hsl(var(--ai-purple) / 0.05));
     --gradient-glow: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--ai-purple) / 0.1));
     
-    /* Shadows with AI glow effects */
-    --shadow-elegant: 0 4px 20px -4px hsl(var(--primary) / 0.1);
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.15);
-    --shadow-card: 0 2px 10px -2px hsl(222 84% 5% / 0.08);
+    /* Enhanced shadows and effects */
+    --shadow-elegant: 0 4px 25px -6px hsl(var(--primary) / 0.12);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-card: 0 2px 15px -3px hsl(222 84% 5% / 0.08);
+    --shadow-hover: 0 8px 30px -8px hsl(var(--primary) / 0.2);
+    --shadow-button: 0 4px 14px -2px hsl(var(--primary) / 0.3);
     
-    /* Animation values */
+    /* Smooth animations and transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     --radius: 0.75rem;
 
@@ -79,7 +87,7 @@
   }
 
   .dark {
-    /* Dark theme with sophisticated AI colors */
+    /* Dark theme with premium AI aesthetics */
     --background: 222 47% 7%;
     --foreground: 210 40% 98%;
 
@@ -92,6 +100,7 @@
     --primary: 217 91% 65%;
     --primary-foreground: 222 47% 7%;
     --primary-glow: 217 91% 75%;
+    --primary-variant: 230 85% 70%;
 
     --secondary: 222 47% 11%;
     --secondary-foreground: 210 40% 98%;
@@ -102,29 +111,35 @@
     --accent: 264 83% 75%;
     --accent-foreground: 222 47% 7%;
 
-    --destructive: 0 63% 31%;
+    --destructive: 0 63% 45%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 222 47% 15%;
     --input: 222 47% 15%;
     --ring: 217 91% 65%;
 
-    /* Dark theme AI colors */
+    /* Enhanced dark theme AI colors */
     --ai-purple: 264 83% 75%;
     --ai-blue: 217 91% 65%;
     --ai-cyan: 190 95% 70%;
     --ai-success: 142 76% 45%;
+    --ai-warning: 38 92% 60%;
+    --ai-emerald: 160 84% 45%;
     
-    /* Dark gradients */
+    /* Dark theme premium gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--ai-purple)));
-    --gradient-card: linear-gradient(145deg, hsl(222 47% 9%), hsl(222 47% 11%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--primary-variant)), hsl(var(--ai-cyan)));
+    --gradient-card: linear-gradient(145deg, hsl(222 47% 9% / 0.8), hsl(222 47% 11% / 0.9));
     --gradient-chat: linear-gradient(180deg, hsl(222 47% 7%), hsl(222 47% 9%));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--ai-purple) / 0.1));
     --gradient-glow: linear-gradient(135deg, hsl(var(--primary) / 0.2), hsl(var(--ai-purple) / 0.2));
     
-    /* Dark shadows */
-    --shadow-elegant: 0 4px 20px -4px hsl(var(--primary) / 0.3);
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.25);
-    --shadow-card: 0 2px 10px -2px hsl(0 0% 0% / 0.3);
+    /* Dark theme enhanced shadows */
+    --shadow-elegant: 0 4px 25px -6px hsl(var(--primary) / 0.4);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.3);
+    --shadow-card: 0 2px 15px -3px hsl(0 0% 0% / 0.4);
+    --shadow-hover: 0 8px 30px -8px hsl(var(--primary) / 0.35);
+    --shadow-button: 0 4px 14px -2px hsl(var(--primary) / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -142,6 +157,56 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Responsive breakpoints and utilities */
+  .container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Modern button animations */
+  .btn-animate {
+    @apply transform transition-all duration-300 ease-out;
+  }
+
+  .btn-animate:hover {
+    @apply scale-105 shadow-hover;
+  }
+
+  .btn-animate:active {
+    @apply scale-95;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/10 border border-white/10;
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
   }
 }

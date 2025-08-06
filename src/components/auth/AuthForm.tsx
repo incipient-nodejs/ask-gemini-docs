@@ -60,35 +60,43 @@ export const AuthForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-chat flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        <div className="flex items-center justify-center mb-8">
-          <div className="flex items-center space-x-2">
-            <div className="p-2 bg-gradient-primary rounded-xl shadow-glow">
-              <Bot className="w-8 h-8 text-white" />
+    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
+      <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-primary rounded-full blur-3xl opacity-10 animate-pulse"></div>
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-secondary rounded-full blur-3xl opacity-10 animate-pulse delay-1000"></div>
+      
+      <div className="w-full max-w-md relative z-10">
+        <div className="flex items-center justify-center mb-8 animate-bounce">
+          <div className="flex items-center space-x-3">
+            <div className="p-3 bg-gradient-primary rounded-2xl shadow-button transform transition-spring hover:scale-110">
+              <Bot className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              AI-chatbot
-            </h1>
+            <div>
+              <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                DocChat AI
+              </h1>
+              <p className="text-sm text-muted-foreground">Intelligent document conversations</p>
+            </div>
           </div>
         </div>
 
-        <Card className="shadow-elegant border-0 bg-gradient-card">
-          <CardHeader className="space-y-1">
-            <CardTitle className="text-2xl text-center">
+        <Card className="shadow-elegant border-0 bg-gradient-card/80 backdrop-blur-xl glass transform transition-spring hover:shadow-hover">
+          <CardHeader className="space-y-2 pb-6">
+            <CardTitle className="text-2xl text-center font-bold">
               {isForgotPassword 
-                ? 'Reset Password' 
+                ? '🔐 Reset Password' 
                 : isSignUp 
-                ? 'Create Account' 
-                : 'Welcome Back'
+                ? '🚀 Create Account' 
+                : '👋 Welcome Back'
               }
             </CardTitle>
-            <CardDescription className="text-center">
+            <CardDescription className="text-center text-base">
               {isForgotPassword 
-                ? 'Enter your email to receive a reset link'
+                ? 'Enter your email address and we\'ll send you a secure reset link'
                 : isSignUp 
-                ? 'Sign up to start chatting with your documents' 
-                : 'Sign in to access your document conversations'
+                ? 'Join thousands of users who chat with their documents using AI' 
+                : 'Sign in to continue your intelligent document conversations'
               }
             </CardDescription>
           </CardHeader>
@@ -170,53 +178,54 @@ export const AuthForm = () => {
 
               <Button 
                 type="submit" 
-                className="w-full bg-gradient-primary hover:opacity-90 transition-smooth" 
+                className="w-full bg-gradient-primary hover:opacity-90 transition-spring btn-animate shadow-button text-lg py-6" 
                 disabled={loading}
               >
                 {loading ? (
                   <LoadingSpinner size="sm" className="mr-2" />
                 ) : null}
                 {isForgotPassword 
-                  ? 'Send Reset Link' 
+                  ? '📧 Send Reset Link' 
                   : isSignUp 
-                  ? 'Create Account' 
-                  : 'Sign In'
+                  ? '🎉 Create My Account' 
+                  : '✨ Sign Me In'
                 }
               </Button>
             </form>
 
-            <div className="space-y-2 text-center text-sm">
+            <div className="space-y-3 text-center">
               {!isForgotPassword && (
                 <Link 
                   to="/auth?mode=forgot" 
-                  className="text-primary hover:underline"
+                  className="text-primary hover:text-primary-glow transition-smooth font-medium inline-flex items-center space-x-1 hover:underline"
                 >
-                  Forgot your password?
+                  <span>🔐</span>
+                  <span>Forgot your password?</span>
                 </Link>
               )}
               
-              <div>
+              <div className="pt-4 border-t border-border/50">
                 {isSignUp ? (
-                  <>
+                  <p className="text-muted-foreground">
                     Already have an account?{' '}
-                    <Link to="/auth?mode=signin" className="text-primary hover:underline">
-                      Sign in
+                    <Link to="/auth?mode=signin" className="text-primary hover:text-primary-glow transition-smooth font-semibold hover:underline">
+                      Sign in here
                     </Link>
-                  </>
+                  </p>
                 ) : !isForgotPassword ? (
-                  <>
-                    Don't have an account?{' '}
-                    <Link to="/auth?mode=signup" className="text-primary hover:underline">
-                      Sign up
+                  <p className="text-muted-foreground">
+                    New to DocChat AI?{' '}
+                    <Link to="/auth?mode=signup" className="text-primary hover:text-primary-glow transition-smooth font-semibold hover:underline">
+                      Create your account
                     </Link>
-                  </>
+                  </p>
                 ) : (
-                  <>
+                  <p className="text-muted-foreground">
                     Remember your password?{' '}
-                    <Link to="/auth?mode=signin" className="text-primary hover:underline">
-                      Sign in
+                    <Link to="/auth?mode=signin" className="text-primary hover:text-primary-glow transition-smooth font-semibold hover:underline">
+                      Sign in instead
                     </Link>
-                  </>
+                  </p>
                 )}
               </div>
             </div>

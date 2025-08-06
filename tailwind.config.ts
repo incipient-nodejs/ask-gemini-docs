@@ -67,23 +67,31 @@ export default {
 					purple: 'hsl(var(--ai-purple))',
 					blue: 'hsl(var(--ai-blue))',
 					cyan: 'hsl(var(--ai-cyan))',
-					success: 'hsl(var(--ai-success))'
-				}
+					success: 'hsl(var(--ai-success))',
+					warning: 'hsl(var(--ai-warning))',
+					emerald: 'hsl(var(--ai-emerald))'
+				},
+				'primary-variant': 'hsl(var(--primary-variant))'
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-card': 'var(--gradient-card)',
 				'gradient-chat': 'var(--gradient-chat)',
+				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-glow': 'var(--gradient-glow)'
 			},
 			boxShadow: {
 				'elegant': 'var(--shadow-elegant)',
 				'glow': 'var(--shadow-glow)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'hover': 'var(--shadow-hover)',
+				'button': 'var(--shadow-button)'
 			},
 			transitionTimingFunction: {
 				'smooth': 'var(--transition-smooth)',
-				'bounce': 'var(--transition-bounce)'
+				'bounce': 'var(--transition-bounce)',
+				'spring': 'var(--transition-spring)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
