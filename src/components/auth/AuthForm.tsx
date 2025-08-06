@@ -68,7 +68,7 @@ export const AuthForm = () => {
               <Bot className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              DocChat AI
+              AI-chatbot
             </h1>
           </div>
         </div>
