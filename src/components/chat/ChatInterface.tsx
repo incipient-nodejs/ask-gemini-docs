@@ -219,7 +219,8 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({ documentsRefreshTr
       const { data: aiResponse, error: aiError } = await supabase.functions.invoke('chat-with-documents', {
         body: { 
           message: userMessage,
-          conversationId: activeConversation
+          sessionId: activeConversation,
+          userId: user.id
         }
       });
 

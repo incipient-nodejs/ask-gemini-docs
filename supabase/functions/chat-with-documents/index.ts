@@ -237,7 +237,7 @@ serve(async (req) => {
         .select(`
           content,
           page_number,
-          documents!inner(title, user_id)  -- Ensure correct join and column reference
+          documents!inner(name, user_id)  -- Ensure correct join and column reference
         `)
         .eq('documents.user_id', userId)   // Ensure we're filtering by user_id
         .limit(5);                         // Limit the number of chunks returned
@@ -268,7 +268,7 @@ serve(async (req) => {
     // Build context from retrieved chunks
     const context = chunks.map((chunk: any) => chunk.content).join('\n\n');
     const sources = chunks.map((chunk: any) => ({
-      document_title: chunk.documents?.title || 'Document',
+      document_title: chunk.documents?.name || 'Document',
       chunk_content: chunk.content.substring(0, 100) + '...',
       page_number: chunk.page_number
     }));
