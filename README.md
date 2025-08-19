@@ -1,3 +1,29 @@
+### **Supabase Functions**
+
+1. **PDF Processing Function**
+
+   * Issue: Text extraction from PDFs was not working properly.
+   * Additionally, embeddings for each chunk needed to be generated via the `generative-ai` package, but the package wasn’t working as expected.
+   * Workaround: Used the **Google Gemini REST API** directly to generate embeddings.
+
+2. **Search Function**
+
+   * Issue: Embedding-based search through the `generative-ai` package failed.
+   * Workaround: Switched to using the **REST API** instead of the package.
+
+### **Database Schema**
+
+* Faced an issue with **vector dimensions** not matching Google Gemini’s embedding size.
+* Fixed by updating the column to `vector(768)` to align with Gemini’s embedding dimension.
+
+### **Network Calls**
+
+* Both functions relied on Google Gemini embeddings.
+* The SDK (`generative-ai` package) calls failed, so we replaced them with **direct REST API calls**, which worked reliably.
+
+<br><br><br>
+  
+
 # Bug Fix Documentation
 
 ## Recent Bug Fixes and Improvements
