@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthForm } from '@/components/auth/AuthForm';
+import { AuthForm } from '@/components/auth/leadcaptureform';
 import { useAuth } from '@/hooks/useAuth';
 
 const Auth = () => {
